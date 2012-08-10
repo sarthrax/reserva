@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  data_inicio: 2012-04-10 15:21:44
+  data_termino: 2012-04-10 15:21:44
+  policial: 
+  item: 
+  observacao: MyText
+
+two:
+  data_inicio: 2012-04-10 15:21:44
+  data_termino: 2012-04-10 15:21:44
+  policial: 
+  item: 
+  observacao: MyText

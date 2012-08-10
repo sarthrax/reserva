@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+<h2>Dados pessoais</h2>
+<table>
+  <tr>
+    <th>Cpf</th>
+    <th>Nome</th>
+    <th>Nome guerra</th>
+    <th>Matricula</th>
+    <th>Nascimento</th>
+    <th>Email</th>
+  </tr>
+  <tr>
+    <td><%= @policial.cpf %></td>
+    <td><%= @policial.nome %></td>
+    <td><%= @policial.nome_guerra %></td>
+    <td><%= @policial.matricula %></td>
+    <td><%= @policial.nascimento %></td>
+    <td><%= @policial.email %></td>
+  </tr>
+</table>
+
+<h2>Itens cautelados</h2>
+<table>
+  <tr>
+    <th>Item</th>
+    <th>Data cautelado</th>
+  <tr>
+
+<% if @policial.cautelas.empty? %>
+        <td colspan="2">Sem cautelas</td>
+<% else  %>
+<%=     render @policial.cautelas %>
+        <tr><td colspan="2"><%= @policial.cautelas.size %> cautelas(s) encontrada(s)</td></tr>
+<% end %>
+</table>
+
+<h2>Criar cautela</h2>
+<%= render "cautelas/form" %>
+
+
+<h2>Veiculos</h2>
+<table>
+  <tr>
+    <th>Placa</th>
+    <th>Modelo</th>
+    <th>Cor</th>
+    <th>A&ccedil;&atilde;o</th>
+  </tr>
+<% if @policial.veiculos.empty? %>
+      <tr><td colspan="4">Sem veiculos</td></tr>
+<% else %>
+<%=   render @policial.veiculos %>
+      <tr><td colspan="4"><%= @policial.veiculos.size %> veiculo(s) encontrado(s)</td></tr>
+<% end  %>
+</table>
+
+<h2>Adicione um veiculo:</h2>
+<%= render "veiculos/form" %>
+
+<%= link_to 'Editar', edit_policial_path(@policial) %> |
+<%= link_to 'Voltar', policials_path %>

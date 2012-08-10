@@ -1,0 +1,25 @@
+<%= form_for(@indicativo) do |f| %>
+  <% if @indicativo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@indicativo.errors.count, "error") %> prohibited this indicativo from being saved:</h2>
+
+      <ul>
+      <% @indicativo.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :descricao %><br />
+    <%= f.text_field :descricao %>
+  </div>
+  <div class="field">
+    <%= f.label :lote %><br />
+    <%= f.text_field :lote %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

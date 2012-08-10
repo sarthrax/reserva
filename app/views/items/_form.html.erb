@@ -1,0 +1,9 @@
+<%= form_for([@indicativo, @indicativo.items.build]) do |f| %>
+  <div class="field">
+    <%= f.label :numero%><br />
+    <%= f.text_field :numero%>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

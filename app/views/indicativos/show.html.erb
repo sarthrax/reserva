@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Descricao:</b>
+  <%= @indicativo.descricao %>
+</p>
+
+<p>
+  <b>Lote:</b>
+  <%= @indicativo.lote %>
+</p>
+
+<h2>Itens cadastrados:</h2>
+<%= render @indicativo.items %>
+
+<h2>Cadastrar novos itens</h2>
+<%= render "items/form" %>
+
+
+<%= link_to 'Edit', edit_indicativo_path(@indicativo) %> |
+<%= link_to 'Back', indicativos_path %>

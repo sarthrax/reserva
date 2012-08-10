@@ -1,0 +1,27 @@
+<h1>Listando veiculos</h1>
+
+<table>
+  <tr>
+    <th>Placa</th>
+    <th>Modelo</th>
+    <th>Cor</th>
+    <th>Proprietario</th>
+    <th colspan="3">A&ccedil;&otilde;es</th>
+  </tr>
+
+<% @veiculos.each do |veiculo|  %>
+  <tr>
+    <td><%= veiculo.placa %></td>
+    <td><%= veiculo.modelo %></td>
+    <td><%= veiculo.cor %></td>
+    <td><%= veiculo.policial.nome %></td>
+    <td><%= link_to 'Mostrar', veiculo %></td>
+    <td><%= link_to 'Editar', edit_veiculo_path(veiculo) %></td>
+    <td><%= link_to 'Apagar', [veiculo.policial, veiculo], confirm: 'Voce tem certeza?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Lista de Policiais', policials_path %>

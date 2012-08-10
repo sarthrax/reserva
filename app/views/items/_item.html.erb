@@ -1,0 +1,10 @@
+  <p>
+    <b>Numero:</b>
+    <%= item.numero %>
+  </p>
+
+  <%= link_to 'Apaga Item', [item.indicativo, item],
+               :confirm => 'Voce tem certeza?',
+               :method => :delete %>
+  </p>
+

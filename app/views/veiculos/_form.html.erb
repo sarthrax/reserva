@@ -1,0 +1,35 @@
+<%= form_for([@policial,@policial.veiculos.build]) do |f| %>
+  <% if @veiculo.blank? == false 
+      if @veiculo.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@veiculo.errors.count, "erro") %> impediram com que este veiculo fosse salvo no sistema:</h2>
+        <ul>
+          <% @veiculo.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <% end %>
+  <table>
+    <tr>
+      <td>
+  <div class="field">
+    <%= f.label :placa%><br />
+    <%= f.text_field :placa%>
+  </div>
+  <div class="field">
+    <%= f.label :modelo%><br />
+    <%= f.text_field :modelo %>
+  </div>
+  <div class="field">
+    <%= f.label :cor%><br />
+    <%= f.text_field :cor%>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+      </td>
+    </tr>
+  </table>
+<% end %>

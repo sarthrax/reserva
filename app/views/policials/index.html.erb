@@ -1,0 +1,35 @@
+<h1>Listando policiais</h1>
+
+<% if @policials.blank? %>
+  <h1>Sem policiais cadastrados</h1>
+<% else %>
+<table>
+  <tr>
+    <th>Cpf</th>
+    <th>Nome</th>
+    <th>Nome guerra</th>
+    <th>Matricula</th>
+    <th>Nascimento</th>
+    <th>Email</th>
+    <th colspan="3">A&ccedil;&otilde;es</th>
+  </tr>
+
+<% @policials.each do |policial| %>
+  <tr>
+    <td><%= policial.cpf %></td>
+    <td><%= policial.nome %></td>
+    <td><%= policial.nome_guerra %></td>
+    <td><%= policial.matricula %></td>
+    <td><%= policial.nascimento %></td>
+    <td><%= policial.email %></td>
+    <td><%= link_to 'Mostrar', policial %></td>
+    <td><%= link_to 'Editar', edit_policial_path(policial) %></td>
+    <td><%= link_to 'Apagar', policial, confirm: 'Voce tem certeza?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<% end %>
+
+<%= link_to 'Novo Policial', new_policial_path %>

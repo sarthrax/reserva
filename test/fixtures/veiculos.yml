@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  placa: MyString
+  modelo: MyString
+  cor: MyString
+  policial: 
+
+two:
+  placa: MyString
+  modelo: MyString
+  cor: MyString
+  policial: 

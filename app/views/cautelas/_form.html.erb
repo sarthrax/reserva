@@ -1,0 +1,26 @@
+<%= form_for([@policial,@policial.cautelas.build]) do |f| %>
+  <% if @cautela.blank? == false 
+      if @cautela.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@cautela.errors.count, "erro") %> impediram com que esta cautela fosse salva no sistema:</h2>
+        <ul>
+          <% @cautela.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <% end %>
+  <table>
+    <tr>
+      <td>
+  <div class="field">
+    <%= select_tag "item", options_from_collection_for_select(@items, 'id', 'descricao_completa' ) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+      </td>
+    </tr>
+  </table>
+<% end %>

@@ -1,0 +1,8 @@
+  <tr>
+    <td><%= veiculo.placa %></td>
+    <td><%= veiculo.modelo %></td>
+    <td><%= veiculo.cor %></td>
+    <td><%= link_to 'Apaga veiculo', [veiculo.policial, veiculo],
+               :confirm => 'Voce tem certeza?',
+               :method => :delete %></td>
+  </tr>

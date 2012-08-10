@@ -1,0 +1,41 @@
+<%= form_for(@policial) do |f| %>
+  <% if @policial.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@policial.errors.count, "erro") %> impediram com que este policial fosse salvo no sistema:</h2>
+
+      <ul>
+      <% @policial.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :cpf %><br />
+    <%= f.text_field :cpf %>
+  </div>
+  <div class="field">
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :nome_guerra %><br />
+    <%= f.text_field :nome_guerra %>
+  </div>
+  <div class="field">
+    <%= f.label :matricula %><br />
+    <%= f.number_field :matricula %>
+  </div>
+  <div class="field">
+    <%= f.label :nascimento %><br />
+    <%= f.date_select :nascimento, :start_year => 1900, :end_year => 2012 %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
